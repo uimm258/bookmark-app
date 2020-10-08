@@ -66,8 +66,6 @@ function generateAddNew(){
 };
 
 
-
-
 //add new bookmarks to the form
 function handleAddNewForm(){
     $('#js-add-new-button').on('click', event =>{
@@ -76,8 +74,6 @@ function handleAddNewForm(){
         render();
     });
 };
-
-
 
 
 //submit new bookmark
@@ -184,8 +180,7 @@ function handleDelete(){
 };
 
 
-
-
+// filter each bookmarks by the rating
 function handleFilter(){
     $('.js-filter-by').on('change', '#js-filter-rating', event => {
         const displayRating = $('#js-filter-rating').val();
@@ -215,25 +210,16 @@ function getBookmarkIdFromElement(bookmark){
 //render all
 function render(){
 
-
     if(store.adding){
         $('.js-add-new-bookmark').html(generateAddNew());
     } else {
         $('.js-add-new-bookmark').empty();
     }
 
-
-
-
-   
-
-
     const items = [...store.items];
     const bookmarkStrings = generateBookmarkString(store.items);
     $('.js-bookmarks').html(bookmarkStrings);
 
-
-    //doesn't filter
     if(store.filter){
         const displayRating = $('#js-filter-rating').val();
         const htmlStrings=generateBookmarkString(store.filteredItems(displayRating));
