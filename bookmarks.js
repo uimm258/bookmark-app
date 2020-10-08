@@ -4,6 +4,7 @@ import store from './store.js';
 
 function generateMainPage(){
     let mainPage = `
+    
     <div class="first-page">
                 <form class="add-new-bookmarks-forms" id="js-add-new-form">
                     <button id="js-add-new-button" class="css-add-new-button">+ New</button>
@@ -83,20 +84,20 @@ function handleSubmitBookmarkForm(){
         
         const title = $('#add-new-title').val();
         const url = $('#add-new-url').val();
-        const desp = $('#add-new-description').val();
+        const desc = $('#add-new-description').val();
         const rating = $('select#add-new-rating').val();
 
 
-        api.createBookmark(title, url, desp, Number(rating))
-            .then(newBookmark => {
-                store.addItem(newBookmark);
-                store.adding = false;
-                store.error = null;
-                render();
+        api.createBookmark(title, url, desc, Number(rating))
+        .then(newBookmark => {
+            store.addItem(newBookmark);
+            store.adding = false;
+            store.error = null;
+            render();
         })
         .catch(error => {
-                store.setError(error.message);
-                render();
+            store.setError(error.message);
+            render();
         });
     });
 }
@@ -120,7 +121,7 @@ function generateExpanded(bookmark){
             <div class="bookmark-expanded">
                 <h2 class="add-title">${bookmark.title}</h2>
                 <h3 class="add-rating">Star: ${bookmark.rating}</h3>
-                <p class="add-description">${bookmark.desp}</p>
+                <p class="add-description">${bookmark.desc}</p>
                 <a href="${bookmark.url}">Visit Site</a>
                 <div class="bookmark-expand">
                     <button class="close-button" type="button">Close</button>
@@ -184,7 +185,6 @@ function handleDelete(){
 function handleFilter(){
     $('.js-filter-by').on('change', '#js-filter-rating', event => {
         const displayRating = $('#js-filter-rating').val();
-        console.log(displayRating);
         store.filteredItems(displayRating);
         render();
     });
