@@ -1,7 +1,7 @@
 
 # Hongni Liu's bookmark app for Thinkful
 
-uimm258.github.io/bookmarks-app/
+https://uimm258.github.io/bookmarks-app/
 
 user stories
 
