@@ -50,7 +50,7 @@ function filteredItems(filterNumber) {
     this.filter = filterNumber;
     let filteredBookmarks = [];
     this.items.forEach(bookmark => {
-        if(bookmark.rating == filterNumber){
+        if(bookmark.rating >= filterNumber){
             filteredBookmarks.push(bookmark)
         } 
     })

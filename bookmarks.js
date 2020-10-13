@@ -2,6 +2,14 @@ import api from './api.js';
 import store from './store.js';
 
 
+function generateHtmlPage(){
+    let htmlPage = `
+        <h1>My Bookmark Page</h1>
+        <section id="main-page" class="css-main-page"></section>
+        <ul class="js-bookmarks"></ul>`;
+    $('main').html(htmlPage);
+}
+
 function generateMainPage(){
     let mainPage = `
     
@@ -231,6 +239,7 @@ function render(){
 
 
 function bindEventListeners(){
+    generateHtmlPage();
     generateMainPage();
     handleAddNewForm();
     handleSubmitBookmarkForm();
