@@ -5,10 +5,6 @@ const adding = false;
 const filter = 0;
 
 
-
-
-
-
 function findById(id){
     return this.items.find(currentItem => currentItem.id === id);
 };
@@ -18,7 +14,6 @@ function addItem(item){
     let expandedObject = {
         expanded: false
     }; 
-
 
     Object.assign(item, expandedObject);
     this.items.push(item);
