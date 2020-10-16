@@ -43,7 +43,7 @@ function generateAddNew(){
     
             <section class="add-url">
                 <label for="add-new-url">Add New Bookmark</label>
-                <input type="text" name="url" class="new-url" id="add-new-url" placeholder="https://www.example.com" required></input>
+                <input type="url" name="url" class="new-url" id="add-new-url" placeholder="https://www.example.com" required></input>
             </section>
     
             <section class="add-title">
